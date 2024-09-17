@@ -1,0 +1,281 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url(https://fonts.bunny.net/css?family=dela-gothic-one:400);
+
+[x-cloak] {
+    display: none;
+}
+
+@layer components {
+    h1 {
+        @apply text-3xl font-bold tracking-tight;
+    }
+
+    h2 {
+        @apply text-xl font-extrabold;
+    }
+}
+
+/***************************************PROGRESS BAR******************************************************/
+
+.pc-12 {
+    background: conic-gradient(
+        #360e6f 0% 12.5%,
+        /* Couleur du cercle de progression et pourcentage complété */ #d3d3d3
+            12.5% 100% /* Couleur de la partie non complétée */
+    );
+}
+
+.pc-25 {
+    background: conic-gradient(
+        #360e6f 0% 25%,
+        /* Couleur du cercle de progression et pourcentage complété */ #d3d3d3
+            25% 100% /* Couleur de la partie non complétée */
+    );
+}
+
+.pc-37 {
+    background: conic-gradient(
+        #360e6f 0% 37.5%,
+        /* Couleur du cercle de progression et pourcentage complété */ #d3d3d3
+            37.5% 100% /* Couleur de la partie non complétée */
+    );
+}
+
+.pc-50 {
+    background: conic-gradient(
+        #360e6f 0% 50%,
+        /* Couleur du cercle de progression et pourcentage complété */ #d3d3d3
+            50% 100% /* Couleur de la partie non complétée */
+    );
+}
+
+.pc-62 {
+    background: conic-gradient(
+        #360e6f 0% 62.5%,
+        /* Couleur du cercle de progression et pourcentage complété */ #d3d3d3
+            62.5% 100% /* Couleur de la partie non complétée */
+    );
+}
+
+.pc-75 {
+    background: conic-gradient(
+        #360e6f 0% 75%,
+        /* Couleur du cercle de progression et pourcentage complété */ #d3d3d3
+            75% 100% /* Couleur de la partie non complétée */
+    );
+}
+
+.pc-87 {
+    background: conic-gradient(
+        #360e6f 0% 87.5%,
+        /* Couleur du cercle de progression et pourcentage complété */ #d3d3d3
+            87.5% 100% /* Couleur de la partie non complétée */
+    );
+}
+
+.pc-100 {
+    background: conic-gradient(
+        #360e6f 0% 100%,
+        /* Couleur du cercle de progression et pourcentage complété */ #d3d3d3
+            100% 100% /* Couleur de la partie non complétée */
+    );
+}
+
+/**************************************STARS********************************************************/
+:root {
+    --enlarge: scale(1.25);
+    --page-color: steelblue;
+    --star-primary-color: #a632db;
+    --star-secondary-color: #3c145a;
+}
+
+.container {
+    display: grid;
+    place-content: center;
+    padding-bottom: 3rem;
+}
+
+.star-group {
+    display: grid;
+    font-size: clamp(1.5em, 10vw, 8em);
+    grid-template-columns: repeat(5, auto);
+}
+
+/* reset native input styles */
+.star {
+    -webkit-appearance: none;
+    align-items: center;
+    appearance: none;
+    cursor: pointer;
+    display: grid;
+    font: inherit;
+    height: 1.15em;
+    justify-items: center;
+    margin: 0;
+    place-content: center;
+    position: relative;
+    width: 1.15em;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .star {
+        transition: all 0.25s;
+    }
+
+    .star:before,
+    .star:after {
+        transition: all 0.25s;
+    }
+}
+
+.star:before,
+.star:after {
+    color: var(--star-primary-color);
+    position: absolute;
+}
+
+.star:before {
+    content: "☆";
+}
+
+.star:after {
+    content: "✦";
+    font-size: 25%;
+    opacity: 0;
+    right: 20%;
+    top: 20%;
+}
+
+/* The checked radio button and each radio button preceding */
+.star:checked:before,
+.star:has(~ .star:checked):before {
+    content: "★";
+}
+
+/* Adding styles for the stars 6 to 10 */
+#six:checked:before,
+.star:has(~ #six:checked):before {
+    transform: var(--enlarge);
+}
+
+#six:checked:after,
+.star:has(~ #six:checked):after {
+    opacity: 1;
+    right: 8%;
+    top: 2%;
+    transform: var(--enlarge);
+}
+
+#seven:checked:before,
+.star:has(~ #seven:checked):before {
+    text-shadow: 0.05em 0.033em 0px var(--star-secondary-color);
+    transform: var(--enlarge);
+}
+
+#seven:checked:after,
+.star:has(~ #seven:checked):after {
+    opacity: 1;
+    right: 8%;
+    top: 2%;
+    transform: var(--enlarge);
+}
+
+#eight:checked:before,
+.star:has(~ #eight:checked):before {
+    text-shadow: 0.05em 0.033em 0px var(--star-secondary-color);
+    transform: var(--enlarge);
+}
+
+#eight:checked:after,
+.star:has(~ #eight:checked):after {
+    opacity: 1;
+    right: 8%;
+    text-shadow: 0.14em 0.075em 0px var(--star-secondary-color);
+    top: 2%;
+    transform: var(--enlarge);
+}
+
+#nine:checked:before,
+.star:has(~ #nine:checked):before {
+    text-shadow: 0.05em 0.033em 0px var(--star-secondary-color);
+    transform: var(--enlarge);
+}
+
+#nine:checked:after,
+.star:has(~ #nine:checked):after {
+    opacity: 1;
+    right: 8%;
+    text-shadow: 0.14em 0.075em 0px var(--star-secondary-color);
+    top: 2%;
+    transform: var(--enlarge);
+}
+
+#ten:checked:before,
+.star:has(~ #ten:checked):before {
+    text-shadow: 0.05em 0.033em 0px var(--star-secondary-color);
+    transform: var(--enlarge);
+}
+
+#ten:checked:after,
+.star:has(~ #ten:checked):after {
+    opacity: 1;
+    right: 8%;
+    text-shadow: 0.14em 0.075em 0px var(--star-secondary-color);
+    top: 2%;
+    transform: var(--enlarge);
+}
+
+.star-group:has(> #ten:checked) {
+    .one {
+        transform: rotate(-15deg);
+    }
+
+    .two {
+        transform: translateY(-20%) rotate(-7.5deg);
+    }
+
+    .three {
+        transform: translateY(-30%);
+    }
+
+    .four {
+        transform: translateY(-20%) rotate(7.5deg);
+    }
+
+    .five {
+        transform: rotate(15deg);
+    }
+
+    .six {
+        transform: rotate(7.5deg);
+    }
+
+    .seven {
+        transform: translateY(20%) rotate(7.5deg);
+    }
+
+    .eight {
+        transform: translateY(30%);
+    }
+
+    .nine {
+        transform: translateY(20%) rotate(-7.5deg);
+    }
+
+    .ten {
+        transform: rotate(-15deg);
+    }
+}
+
+.star:focus {
+    outline: none;
+}
+
+.star:focus-visible {
+    border-radius: 8px;
+    outline: 2px dashed var(--star-primary-color);
+    outline-offset: 8px;
+    transition: all 0s;
+}
