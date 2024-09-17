@@ -1,7 +1,7 @@
+@import url(https://fonts.bunny.net/css?family=dela-gothic-one:400);
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url(https://fonts.bunny.net/css?family=dela-gothic-one:400);
 
 [x-cloak] {
     display: none;
